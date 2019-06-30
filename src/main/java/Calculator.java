@@ -7,9 +7,12 @@ public class Calculator {
 
         String delimiter = ",|\n";
         String changeDelimiterPattern = "(//)(.+)(\n)(.+)";
+        String secondChangeDelimiterPattern = "(//\\[)(.+)(\\]\n)(.+)";
         int ignoreMoreThan = 1000;
         if(numbers.matches(changeDelimiterPattern)){
-            Pattern pattern = Pattern.compile(changeDelimiterPattern);
+
+            Pattern pattern = numbers.matches(secondChangeDelimiterPattern) ? Pattern.compile(secondChangeDelimiterPattern)
+                    : Pattern.compile(changeDelimiterPattern);
             Matcher matcher = pattern.matcher(numbers);
             if (matcher.find()){
                 delimiter = matcher.group(2);
