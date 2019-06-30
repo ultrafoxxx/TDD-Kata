@@ -93,5 +93,13 @@ public class CalculatorTest {
         Assert.assertEquals(expectedOutcome, result);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void checkForNegativeNumbersException(){
+        String argument = "//:\n2:-5:-7";
+
+        calculator.add(argument);
+
+    }
+
 
 }

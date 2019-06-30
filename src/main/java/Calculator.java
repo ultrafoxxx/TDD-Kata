@@ -21,9 +21,19 @@ public class Calculator {
         if(numbers.length()<iterationLength){
             iterationLength = numbers.length();
         }
-
+        StringBuilder builder = new StringBuilder();
+        boolean wasNegative = false;
         for(int i=0;i<iterationLength; i++){
             result+= Integer.valueOf(arrayOfNumbers[i]);
+            if(Integer.valueOf(arrayOfNumbers[i])<0){
+                wasNegative = true;
+                builder.append(Integer.valueOf(arrayOfNumbers[i]));
+                builder.append(", ");
+            }
+        }
+        if(wasNegative){
+            builder.insert(0, "Negative values were identified in function argument: ");
+            throw new IllegalArgumentException(builder.toString());
         }
         return result;
     }
