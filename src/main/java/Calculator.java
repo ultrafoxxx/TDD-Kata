@@ -4,7 +4,7 @@ public class Calculator {
 
     public int add(String numbers){
 
-        String delimiter = ",";
+        String delimiter = ",|\n";
         int result = 0;
         String[] arrayOfNumbers = numbers.split(delimiter);
         int iterationLength = arrayOfNumbers.length;

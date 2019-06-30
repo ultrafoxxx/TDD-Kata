@@ -53,5 +53,25 @@ public class CalculatorTest {
         Assert.assertEquals(expectedOutcome, result);
     }
 
+    @Test
+    public void checkForThreeNumbersWithEnter(){
+        String argument = "2\n5\n7";
+        int expectedOutcome = 14;
+
+        int result = calculator.add(argument);
+
+        Assert.assertEquals(expectedOutcome, result);
+    }
+
+    @Test
+    public void checkForThreeNumbersWithEnterAndComa(){
+        String argument = "2,5\n7";
+        int expectedOutcome = 14;
+
+        int result = calculator.add(argument);
+
+        Assert.assertEquals(expectedOutcome, result);
+    }
+
 
 }
