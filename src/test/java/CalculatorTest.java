@@ -101,5 +101,15 @@ public class CalculatorTest {
 
     }
 
+    @Test
+    public void checkForIgnoringOverNumber(){
+        String argument = "//:\n999:1000:1001";
+        int expectedOutcome = 1999;
+
+        int result = calculator.add(argument);
+
+        Assert.assertEquals(expectedOutcome, result);
+    }
+
 
 }

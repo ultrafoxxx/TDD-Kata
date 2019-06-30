@@ -7,6 +7,7 @@ public class Calculator {
 
         String delimiter = ",|\n";
         String changeDelimiterPattern = "(//)(.+)(\n)(.+)";
+        int ignoreMoreThan = 1000;
         if(numbers.matches(changeDelimiterPattern)){
             Pattern pattern = Pattern.compile(changeDelimiterPattern);
             Matcher matcher = pattern.matcher(numbers);
@@ -24,7 +25,7 @@ public class Calculator {
         StringBuilder builder = new StringBuilder();
         boolean wasNegative = false;
         for(int i=0;i<iterationLength; i++){
-            result+= Integer.valueOf(arrayOfNumbers[i]);
+            result+= Integer.valueOf(arrayOfNumbers[i]) <= ignoreMoreThan ? Integer.valueOf(arrayOfNumbers[i]) : 0;
             if(Integer.valueOf(arrayOfNumbers[i])<0){
                 wasNegative = true;
                 builder.append(Integer.valueOf(arrayOfNumbers[i]));
