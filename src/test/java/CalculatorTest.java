@@ -46,7 +46,7 @@ public class CalculatorTest {
     @Test
     public void checkForThreeNumbers(){
         String argument = "2,5,7";
-        int expectedOutcome = 7;
+        int expectedOutcome = 14;
 
         int result = calculator.add(argument);
 
