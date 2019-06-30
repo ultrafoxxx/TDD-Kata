@@ -131,5 +131,15 @@ public class CalculatorTest {
         Assert.assertEquals(expectedOutcome, result);
     }
 
+    @Test
+    public void checkForMultipleDifferentSignDelimiters(){
+        String argument = "//[:-:][;%;]\n2:-:5;%;7";
+        int expectedOutcome = 14;
+
+        int result = calculator.add(argument);
+
+        Assert.assertEquals(expectedOutcome, result);
+    }
+
 
 }
